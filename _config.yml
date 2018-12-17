@@ -1,0 +1,9 @@
+title: Site Title
+
+collections:
+  projects:
+
+plugins:
+  - jekyll-paginate
+
+paginate: 5
