@@ -1,9 +1,17 @@
 title: Site Title
 
+styles:
+  colors:
+    primary: "#000"
+
 collections:
   projects:
+
+sass:
+  style: compressed
 
 plugins:
   - jekyll-paginate
 
 paginate: 5
+
