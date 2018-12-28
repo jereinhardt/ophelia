@@ -1,5 +1,14 @@
 title: Site Title
 
+main_navigation:
+  cta_text: Contact Me
+  cta_path: "#"
+  items:
+  - text: Portfolio
+    path: "#portfolio"
+  - text: About
+    path: "#about"
+
 styles:
   colors:
     primary: "#000"

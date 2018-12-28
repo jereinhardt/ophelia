@@ -1,1 +1,32 @@
-<nav>this is the navigation</nav>
+<nav class="navbar" role="navigation" aria-label="main navigation" id="main-navigation">
+  <div class="navbar-brand">    
+    {% if site.main_navigation.logo %}  
+      <a href="/" class="navbar-item">
+        <img
+          src="{{ site.main_navigation.logo }}"
+          width="{{ site.main_navigation.logo_width }}"
+          height="{{ site.main_navigation.logo_height }}"
+        />
+      </a>
+    {% endif %}
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-end">
+      {% for item in site.main_navigation.items %}
+        <a href="{{ item.path }}" class="navbar-item">{{ item.text }}</a>
+      {% endfor %}
+      {% if site.main_navigation.cta_text %}
+        <div class="navbar-item">
+          <a href="{{ site.main_navigation.cta_path }}" class="button is-primary">
+            {{ site.main_navigation.cta_text }}
+          </a>          
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</nav>
