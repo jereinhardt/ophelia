@@ -1,13 +1,20 @@
 title: Site Title
 
 main_navigation:
-  cta_text: Contact Me
   cta_path: "#"
+  cta_text: Contact Me
   items:
   - text: Portfolio
     path: "#portfolio"
   - text: About
     path: "#about"
+
+hero:
+  cta_path: "#about"
+  cta_text: Learn More
+  description: Great at finding solutions that work.  Not so great at swimming.
+  subtitle: would-be nun turned designer
+  title: Ophelia
 
 styles:
   colors:

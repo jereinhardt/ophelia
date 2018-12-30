@@ -1,0 +1,26 @@
+<section class="hero is-medium is-primary is-bold is-fullheight">
+  <div class="hero-body">
+    <div class="container ">
+      <h1 class="title is-spaced hero-component">
+        {{ site.hero.title }}
+      </h1>
+      {% if site.hero.subtitle %}
+        <h3 class="subtitle hero-component">
+          {{ site.hero.subtitle }}
+        </h3>
+      {% endif %}
+      {% if site.hero.description %}
+        <h5 class="subtitle hero-component">
+          {{ site.hero.description}}
+        </h5>
+      {% endif %}
+      {% if site.hero.cta_text && site.hero.cta_path %}
+        <div class="hero-cta-container hero-component">
+          <a href="{{ site.hero.cta_path }}" class="hero-cta button is-warning">
+            {{ site.hero.cta_text }}
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
