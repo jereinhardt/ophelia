@@ -18,6 +18,10 @@ collections:
 
 sass:
   style: compressed
+  load_paths:
+    - _sass
+    - node_modules
+exclude: []
 
 plugins:
   - jekyll-paginate

@@ -1,0 +1,53 @@
+$drawer-timing-function: cubic-bezier(.4, 0, .2, 1);
+$drawer-enter-transition: transform 250ms $drawer-timing-function;
+$drawer-exit-transition: transform 200ms $drawer-timing-function;
+$navbar-box-shadow: 0 8px 16px rgba($black, 0.1);
+
+.navbar {
+  position: relative;
+
+  @media (min-width: $navbar-breakpoint) {
+    box-shadow: $navbar-box-shadow;
+  }
+}
+
+.navbar-brand {
+  background-color: inherit;
+  position: relative;
+  z-index: $navbar-z;
+
+  @media (min-width: $navbar-breakpoint) {
+    background-color: initial;
+    position: static;
+    z-index: initial;
+  }
+}
+
+.navbar-menu {
+  bottom: calc(100% - 52px);
+  box-shadow: $navbar-box-shadow;
+  display: flex;
+  position: fixed;
+  transition: $drawer-exit-transition;
+  width: 100%;
+  z-index: $navbar-z - 1;
+
+  .navbar-checkbox:checked ~ & {
+    transition: $drawer-enter-transition;
+    transform: translateY(100%);
+  }
+
+  @media (min-width: $navbar-breakpoint) {
+    position: static;
+    transform: none;
+  }
+}
+
+.navbar-end {
+  text-align: center;
+  width: 100%;
+
+  @media (min-width: $navbar-breakpoint) {
+    width: initial;
+  }
+}

@@ -3,4 +3,5 @@
 
 $primary_color: {{ site.styles.colors.primary }} !default;
 
+@import "bulma/bulma.sass";
 @import "main";
