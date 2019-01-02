@@ -1,0 +1,123 @@
+$project-preview-transition: 250ms ease-in;
+
+.portfolio--projects-container {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (min-width: $tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: $desktop) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media (min-width: $widescreen) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  @media (min-width: $fullhd) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+.portfolio--project {
+  background-position: center;
+  background-size: cover;
+  position: relative;
+
+  &:before {
+    content: "";
+    height: 0;
+    display: inline-block;
+    padding-top: 60%;
+    width: 1px;
+    position: relative;
+  }
+
+  &:nth-child(5n + 1) {
+    background-color: $primary;
+  }
+
+  &:nth-child(5n + 2) {
+    background-color: $info;
+  }
+
+  &:nth-child(5n + 3) {
+    background-color: $success;
+  }
+
+  &:nth-child(5n + 4) {
+    background-color: $warning;
+  }
+
+  &:nth-child(5n) {
+    background-color: $danger;
+  }
+}
+
+.portfolio--project-content {
+  bottom: 0;
+  left: 0;
+  margin: 20px;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+}
+
+.portfolio--project-overlay {
+  background: transparent;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: background 250ms ease-in;
+  z-index: 1;
+
+  .portfolio--project:hover & {
+    background: $black;
+  }
+}
+
+.portfolio--project-description {
+  color: transparent;
+  font-size: $size-5;
+  margin-top: -0.5rem;
+}
+
+.portfolio--project-title {
+  display: inline-block;
+  position: relative;
+
+  &:after {
+    background: transparent;
+    content: "";
+    display: inline-block;
+    height: 5px;
+    position: absolute;
+    transition: 
+      background $project-preview-transition,
+      width $project-preview-transition;
+    width: 0;
+
+    .portfolio--project:hover & {
+      background: $white;
+      width: 100%;
+    } 
+  }
+}
+
+.portfolio--project-title,
+.portfolio--project-description {
+  transition: color $project-preview-transition;
+  
+  .portfolio--project:hover & {
+    color: $white;
+  }
+}
+
+
+

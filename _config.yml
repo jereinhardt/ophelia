@@ -16,6 +16,10 @@ hero:
   subtitle: would-be nun turned designer
   title: Ophelia
 
+portfolio:
+  title: Portfolio
+  
+
 styles:
   colors:
     primary: "#000"
