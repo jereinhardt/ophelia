@@ -1,0 +1,158 @@
+$showcase-timing-function: cubic-bezier(.4, 0, .2, 1);
+$showcase-transition-duration: 300ms;
+$showcase-transition: $showcase-transition-duration $showcase-timing-function;
+
+$default-showcase-gradient: linear-gradient(
+  141deg,
+  darken(saturate(adjust-hue($primary, -10deg), 10%), 10%) 0%,
+  $primary 71%,
+  lighten(saturate(adjust-hue($primary, 10deg), 5%), 5%) 100%
+);
+
+.project {
+  background-color: $white-bis;
+}
+
+.project--hero {
+  align-items: center;
+  background-color: $white;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  min-height: 400px;
+  padding: $spacing-10 0;
+}
+
+.project--title {
+  font-size: $size-1;
+  font-weight: $weight-bold;
+  text-align: center;
+}
+
+.project--bar {
+  background: $grey-lighter;
+  height: 20px;
+  margin-left: -$spacing-9;
+  margin-right: -$spacing-9;
+
+  &:first-child {
+    margin-bottom: $spacing-7;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+    margin-top: $spacing-7;
+  }
+}
+
+.project--showcase {        
+  background: $default-showcase-gradient;
+}
+
+.project--showcase-link {
+  display: block;
+  min-height: 400px;
+  padding: $spacing-9 $spacing-6;
+  position: relative;
+}
+
+// .project--showcase-filter {
+//   background-color: $grey-light;
+//   bottom: 0;
+//   left: 0;
+//   opacity: 0.1;
+//   position: absolute;
+//   right: 0;
+//   top: 0;
+//   transition: opacity $showcase-transition-duration;
+//   z-index: 1;
+
+//   .project--showcase-link:hover & {
+//     opacity: 0.5;
+//   }
+// }
+
+.project--showcase-text {
+  color: $white;
+  font-size: $size-1;
+  font-weight: $weight-bold;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  transition: transform $showcase-transition;
+  z-index: 2;
+
+  .project--showcase-link:hover & {
+    color: $white;
+    transform: translate3d(-50%, -50%, 0) scale(1.3);
+  }
+}
+
+.project--content {
+  font-size: $size-5;
+  max-width: 800px;
+  padding: $spacing-9 $spacing-9;
+
+  > * {
+    margin-bottom: $spacing-5;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: $weight-semibold;
+    margin-bottom: $spacing-7;
+    margin-top: ($spacing-5 + ($spacing-7 - $spacing-5));
+  }
+
+  h1 { font-size: $size-1; }
+  h2 { font-size: $size-2; }
+  h3 { font-size: $size-3; }
+  h4 { font-size: $size-4; }
+  h5 { font-size: $size-5; }
+  h6 { font-size: $size-6; }
+
+  ol,
+  ul {
+    margin-left: $spacing-8;
+    margin-bottom: $spacing-7;
+    margin-top: ($spacing-5 + ($spacing-7 - $spacing-5));
+  }
+
+  ul {
+    list-style: circle outside;
+  }
+
+  figure {
+    text-align: center;
+    margin-left: -$spacing-9;
+    margin-right: -$spacing-9;
+  }
+
+  blockquote {
+    color: $grey;
+    font-style: italic;
+    padding-left: $spacing-5;
+    position: relative;
+
+    &::before {
+      background: $grey-lighter;
+      content: "";
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;      
+      width: 8px;
+    }
+
+    cite {
+      display: inline-block;
+      margin-top: $spacing-4;
+    }
+  }
+}

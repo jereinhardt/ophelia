@@ -3,8 +3,10 @@
   
   {% include head.html %}
 
-  <body>
+  <body class="project">
     {% include navigation.html %}
-    {{ content }}
+    {% include project_hero.html %}
+    {% include project_content.html %}
+    {% include project_showcase.html %}
   </body>
 </html>

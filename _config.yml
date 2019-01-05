@@ -26,6 +26,15 @@ styles:
 
 collections:
   projects:
+    output: true
+    permalink: /projects/:name
+
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: project
 
 sass:
   style: compressed
@@ -33,6 +42,7 @@ sass:
     - _sass
     - node_modules
 exclude: []
+include: ["_projects"]
 
 plugins:
   - jekyll-paginate
