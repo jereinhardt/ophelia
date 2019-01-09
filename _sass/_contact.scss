@@ -1,0 +1,72 @@
+$input-transition: all 200ms ease-out;
+
+.contact {
+  border-radius: 0px;
+  padding: $spacing-8;
+}
+
+.contact--title {
+  text-align: center;
+}
+
+.contact--form-row {
+  padding-top: $spacing-7 - 0.3rem;
+  position: relative;
+}
+
+.contact--label {
+  color: $grey;
+  font-weight: $weight-normal;
+  position: absolute;
+  top: $spacing-7;
+  transition: $input-transition;
+  z-index: 1;
+
+  .contact--input:focus + &,
+  .contact--input.has-content + & {
+    color: $black;
+    font-weight: $weight-semibold;
+    top: 0;
+  }
+}
+
+.contact--input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 5px solid $grey-light;
+  border-radius: 0;
+  box-shadow: none;
+  color: $grey;
+  padding-left: 0;
+  position: relative;
+  transition: $input-transition;
+  z-index: 2;
+
+  &:focus {
+    color: $black;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: $black;
+    box-shadow: none;
+  }
+}
+
+.contact--submit {
+  border: solid 3px $grey-light;  
+  border-radius: 0;
+  background: transparent;
+  color: $grey-light;
+  padding: $spacing-3 $spacing-4;
+  font-size: 1.25rem;
+  font-weight: $weight-semibold;
+  transition: $input-transition;
+
+  &:hover,
+  &:focus {
+    border-color: $black;
+    color: $black;
+    cursor: pointer;
+  }
+}

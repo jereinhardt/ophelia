@@ -31,6 +31,9 @@ about:
     - Web-app design
     - Web-site design
 
+contact:
+  title: Get in Touch
+
 styles:
   colors:
     primary: "#000"

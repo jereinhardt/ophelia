@@ -42,7 +42,23 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
+  function initContactForm() {
+    var inputs = document.querySelectorAll(
+      ".contact--form input, .contact--form textarea"
+    );
+    inputs.forEach(function(el) {
+      el.addEventListener("keyup", function(event) {
+        if ( el.value === "" ) {
+          el.classList.remove("has-content");
+        } else {
+          el.classList.add("has-content")
+        }
+      });
+    });
+  }
+
   initializeNavbar();
   wrapContentImagesInFigure();
   makeContactModalToggleable();
+  initContactForm();
 });

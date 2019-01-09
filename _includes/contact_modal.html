@@ -13,35 +13,31 @@
   <div class="contact--content modal-content">
     <div class="box contact">
       <h1 class="title contact--title">{{ site.contact.title }}</h1>
-      <p>this is a thing</p>
       <form action="" class="contact--form">
         
         <div class="field contact--form-row">
-          <label for="name" class="label required">Name</label>
-          <div class="control">
-            <input name="name" type="text" class="input">
-          </div>
+          <input name="name" type="text" class="input contact--input">
+          <label for="name" class="label contact--label required">Name</label>
         </div>
 
         <div class="field contact--form-row">
-          <label for="email" class="label required">Email</label>
-          <div class="control">
-            <input name="email" type="email" class="input">
-          </div>
+          <input name="email" type="email" class="input contact--input">
+          <label for="email" class="label contact--label required">Email</label>
         </div>
 
         <div class="field contact--form-row">
-          <label for="phone" class="label">Phone Number</label>
-          <div class="control">
-            <input name="phone" type="text" class="input">
-          </div>
+          <input name="phone" type="text" class="input contact--input">
+          <label for="phone" class="label contact--label">Phone Number</label>
         </div>
 
-        <div class="field-contact--form-row">
-          <label for="message" class="label">Message</label>
-          <textarea name="message" class="textarea"></textarea>
+        <div class="field contact--form-row">
+          <textarea name="message" class="textarea contact--input"></textarea>
+          <label for="message" class="label contact--label">Message</label>
         </div>
 
+        <div class="contact--form-row">
+            <button type="submit" class="contact--submit">Send</button>
+        </div>
       </form>
     </div>
   </div>
