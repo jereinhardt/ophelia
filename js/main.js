@@ -23,6 +23,26 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
+  function makeContactModalToggleable() {
+    var modalContainer = document.getElementById("contact-modal-container");
+    var toggle = document.getElementById("contact-modal-toggle");
+    var closeToggles = document.querySelectorAll("[data-js-modal-close]");
+    var showClass = "is-active";
+
+    toggle.addEventListener("click", function(event) {
+      event.preventDefault();
+      modalContainer.classList.add(showClass);
+    });
+
+    closeToggles.forEach(function(el) {
+      el.addEventListener("click", function(event) {
+        event.preventDefault();
+        modalContainer.classList.remove(showClass);
+      });
+    });
+  }
+
   initializeNavbar();
   wrapContentImagesInFigure();
+  makeContactModalToggleable();
 });

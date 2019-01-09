@@ -1,5 +1,21 @@
+.hidden {
+  display: none;
+}
+
 .section--title {
   font-weight: $weight-semibold;
   text-align: center;
   text-decoration: underline;
+}
+
+.home--body {
+  > .section {
+    &:nth-child(2n) {
+      background: $white;
+    }
+
+    &:nth-child(2n + 1) {
+      background: darken($white-bis, 3%);
+    }
+  }
 }

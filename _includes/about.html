@@ -1,3 +1,30 @@
-<section class="about">
-  
+<section class="section about" id="about">
+  <h1 class="title section--title about--title">{{ site.about.title }}</h1>
+  <div class="container">
+    {% if site.about.image %}
+      <figure class="about--image-container">
+        <img src="{{ site.about.image }}" class="about--image">
+      </figure>
+    {% endif %}
+    <p class="about--description">
+      {{ site.about.description }}
+    </p>
+    <h3 class="about--skills-title">Skills</h3>
+    <div class="about--skills-container columns is-tablet">
+      {% assign skills_count = site.about.skills | size %}
+      {% assign column_array_count = skills_count | divided_by: 2.0 | round %}
+      <ul class="column is-half-tablet about--skill-list">
+        {% for num in (1..column_array_count) %}
+          {% assign index = num | minus: 1 %}        
+          <li class="about--skill">{{ site.about.skills[index] }}</li>
+        {% endfor %}        
+      </ul>
+      <ul class="column is-half-tablet about--skill-list">
+        {% for num in (1..column_array_count) %}
+          {% assign index = num | minus: 1 | plus: column_array_count %}        
+          <li class="about--skill">{{ site.about.skills[index] }}</li>
+        {% endfor %}          
+      </ul>
+    </div>
+  </div>
 </section>

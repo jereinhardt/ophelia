@@ -1,0 +1,48 @@
+<div class="contact--container modal hidden" id="contact-modal-container">
+  <a 
+    role="button"
+    class="navbar-burger is-active contact--close"
+    aria-label="close"
+    data-js-modal-close="true"
+  >
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
+  <div class="contact--background modal-background" data-js-modal-close="true"></div>
+  <div class="contact--content modal-content">
+    <div class="box contact">
+      <h1 class="title contact--title">{{ site.contact.title }}</h1>
+      <p>this is a thing</p>
+      <form action="" class="contact--form">
+        
+        <div class="field contact--form-row">
+          <label for="name" class="label required">Name</label>
+          <div class="control">
+            <input name="name" type="text" class="input">
+          </div>
+        </div>
+
+        <div class="field contact--form-row">
+          <label for="email" class="label required">Email</label>
+          <div class="control">
+            <input name="email" type="email" class="input">
+          </div>
+        </div>
+
+        <div class="field contact--form-row">
+          <label for="phone" class="label">Phone Number</label>
+          <div class="control">
+            <input name="phone" type="text" class="input">
+          </div>
+        </div>
+
+        <div class="field-contact--form-row">
+          <label for="message" class="label">Message</label>
+          <textarea name="message" class="textarea"></textarea>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

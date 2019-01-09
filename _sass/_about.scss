@@ -1,0 +1,31 @@
+.about--image-container {
+  margin-bottom: $spacing-7;
+  text-align: center;
+}
+
+.about--description {
+  font-size: $size-4;
+  margin-bottom: $spacing-7;
+}
+
+.about--skills-title {
+  color: $grey;
+  font-size: $size-4;
+  font-weight: $weight-semibold;
+  margin-bottom: $spacing-3;
+  text-align: center;
+}
+
+.about--skills-container {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.about--skill-list {
+  padding: 0 0 0 $spacing-4;
+}
+
+.about--skill {
+  color: $grey;
+  font-size: $size-5;
+}

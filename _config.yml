@@ -18,7 +18,18 @@ hero:
 
 portfolio:
   title: Portfolio
-  
+
+about:
+  title: About Me
+  description: >
+    I make <strong>more working mockups</strong> of working websites and 
+    applications than any other designer working today.
+  skills:
+    - Prototyping animation
+    - Wireframe creation
+    - Story-based design
+    - Web-app design
+    - Web-site design
 
 styles:
   colors:
