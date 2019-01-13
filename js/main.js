@@ -23,21 +23,33 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
-  function makeContactModalToggleable() {
+  function scrollTo(element) {
+    var top = element.offsetTop - 50;
+    window.scroll({ top: top, behavior: "smooth" });
+  }
+
+  function makeContactFormToggleable() {
     var modalContainer = document.getElementById("contact-modal-container");
     var toggle = document.getElementById("contact-modal-toggle");
     var closeToggles = document.querySelectorAll("[data-js-modal-close]");
     var showClass = "is-active";
+    var contactSection = document.getElementById("contact");
+    var toggleContact = function(event) {
+      event.preventDefault();
+      if ( contactSection ) {
+        scrollTo(contactSection);
+      } else {
+        modalContainer.classList.add(showClass); 
+      }
+    }
 
     toggle.addEventListener("click", function(event) {
-      event.preventDefault();
-      modalContainer.classList.add(showClass);
+      toggleContact(event);
     });
 
     closeToggles.forEach(function(el) {
       el.addEventListener("click", function(event) {
-        event.preventDefault();
-        modalContainer.classList.remove(showClass);
+        toggleContact(event);
       });
     });
   }
@@ -59,6 +71,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
   initializeNavbar();
   wrapContentImagesInFigure();
-  makeContactModalToggleable();
+  makeContactFormToggleable();
   initContactForm();
 });

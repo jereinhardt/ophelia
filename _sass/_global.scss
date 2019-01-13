@@ -2,6 +2,12 @@
   display: none;
 }
 
+
+.section {
+  padding-bottom: $spacing-9;
+  padding-top: $spacing-9;
+}
+
 .section--title {
   font-weight: $weight-semibold;
   text-align: center;
