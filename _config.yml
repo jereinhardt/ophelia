@@ -35,6 +35,9 @@ about:
 contact:
   title: Get in Touch
 
+footer:
+  owner: Ophelia of Denmark
+
 styles:
   colors:
     primary: "#000"

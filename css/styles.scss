@@ -1,7 +1,8 @@
 ---
 ---
 
-$primary_color: {{ site.styles.colors.primary }} !default;
+$primary-color: {{ site.styles.colors.primary }} !default;
+
 $spacing-1: 0.25rem;
 $spacing-2: 0.5rem;
 $spacing-3: 0.725rem;
@@ -12,8 +13,6 @@ $spacing-7: 2.3rem;
 $spacing-8: 3rem;
 $spacing-9: 4rem;
 $spacing-10: 5rem;
-
-
 
 @import "bulma/bulma.sass";
 @import "main";
