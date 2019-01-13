@@ -97,11 +97,13 @@ $project-preview-transition: 250ms ease-in;
     content: "";
     display: inline-block;
     height: 5px;
+    left: 0;
     position: absolute;
     transition: 
       background $project-preview-transition,
       width $project-preview-transition;
     width: 0;
+    top: 100%;
 
     .portfolio--project:hover & {
       background: $white;

@@ -33,7 +33,7 @@ $input-transition: all 200ms ease-out;
 .contact--input {
   background-color: transparent;
   border: 0;
-  border-bottom: 5px solid $grey-light;
+  border-bottom: 5px solid $grey;
   border-radius: 0;
   box-shadow: none;
   color: $grey;
@@ -54,10 +54,10 @@ $input-transition: all 200ms ease-out;
 }
 
 .contact--submit {
-  border: solid 3px $grey-light;  
+  border: solid 3px $grey;  
   border-radius: 0;
   background: transparent;
-  color: $grey-light;
+  color: $grey;
   padding: $spacing-3 $spacing-4;
   font-size: 1.25rem;
   font-weight: $weight-semibold;
