@@ -71,3 +71,37 @@ $navbar-item-padding: $spacing-2 $spacing-3;
     color: darken($primary, 10%);
   }
 }
+
+a.navbar-item {
+  &:hover,
+  &:focus {
+    background-color: $white;
+  }
+}
+
+.navbar-item--text {
+  color: $black;
+  font-weight: $weight-semibold;
+  position: relative;
+
+  &::after {
+    background: $black;
+    content: "";
+    display: block;
+    height: 3px;
+    left: 0;
+    position: absolute;
+    top: 100%;
+    width: 0%;
+    transition: width 200ms ease-in;
+  }
+
+  .navbar-item:hover &,
+  .navbar-item:focus & {
+    color: $black;
+
+    &::after {
+      width: 100%;
+    }
+  }
+}

@@ -22,7 +22,11 @@
   <div class="navbar-menu" id="main-nav-menu">
     <div class="navbar-end">
       {% for item in site.main_navigation.items %}
-        <a href="{{ item.path }}" class="navbar-item">{{ item.text }}</a>
+        <a href="{{ item.path }}" class="navbar-item">
+          <span class="navbar-item--text">            
+            {{ item.text }}
+          </span>
+        </a>
       {% endfor %}
       {% if site.main_navigation.cta_text %}
         <div class="navbar-item">
