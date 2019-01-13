@@ -2,6 +2,7 @@ $drawer-timing-function: cubic-bezier(.4, 0, .2, 1);
 $drawer-enter-transition: transform 250ms $drawer-timing-function;
 $drawer-exit-transition: transform 200ms $drawer-timing-function;
 $navbar-box-shadow: 0 8px 16px rgba($black, 0.1);
+$navbar-item-padding: $spacing-2 $spacing-3;
 
 .navbar {
   position: relative;
@@ -38,6 +39,8 @@ $navbar-box-shadow: 0 8px 16px rgba($black, 0.1);
   }
 
   @media (min-width: $navbar-breakpoint) {
+    box-shadow: none;
+    width: auto;
     position: static;
     transform: none;
   }
@@ -49,5 +52,22 @@ $navbar-box-shadow: 0 8px 16px rgba($black, 0.1);
 
   @media (min-width: $navbar-breakpoint) {
     width: initial;
+  }
+}
+
+.navbar-burger {
+  height: auto;
+}
+
+.navbar-logo-text {
+  border: 2px solid $primary;
+  color: $primary;
+  display: inline-block;
+  padding: $navbar-item-padding;
+
+  .navbar-item:hover > &,
+  .navbar-item:focus > & {
+    border-color: darken($primary, 10%);
+    color: darken($primary, 10%);
   }
 }

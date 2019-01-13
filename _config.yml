@@ -8,6 +8,7 @@ main_navigation:
     path: "#portfolio"
   - text: About
     path: "#about"
+  site_name: "JER"
 
 hero:
   cta_path: "#about"

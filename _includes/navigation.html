@@ -1,16 +1,19 @@
 <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation" id="main-navigation">
   <input type="checkbox" class="navbar-checkbox hidden" id="mobile-nav-checkbox" />
   <div class="navbar-brand">    
-    {% if site.main_navigation.logo %}  
-      <a href="/" class="navbar-item">
+    <a href="/" class="navbar-item">
+      {% if site.main_navigation.logo %}  
         <img
+          class="navbar-logo"
           src="{{ site.main_navigation.logo }}"
-          width="{{ site.main_navigation.logo_width }}"
-          height="{{ site.main_navigation.logo_height }}"
         />
-      </a>
-    {% endif %}
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" id="mobile-nav-toggle">
+      {% else %}
+        <span class="navbar-logo-text">
+          {{ site.main_navigation.site_name }}
+        </span>
+      {% endif %}
+    </a>
+    <a role="button" class="navbar-burger main-navigation--burger" aria-label="menu" aria-expanded="false" id="mobile-nav-toggle">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
