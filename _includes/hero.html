@@ -16,7 +16,7 @@
       {% endif %}
       {% if site.hero.cta_text && site.hero.cta_path %}
         <div class="hero--cta-container hero-component">
-          <a href="{{ site.hero.cta_path }}" class="hero--cta button is-warning">
+          <a href="{{ site.hero.cta_path }}" class="hero--cta button is-warning" data-js-scroll-to-target>
             {{ site.hero.cta_text }}
           </a>
         </div>

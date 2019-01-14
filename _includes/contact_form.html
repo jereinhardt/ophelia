@@ -1,27 +1,37 @@
 <h1 class="title contact--title">{{ site.contact.title }}</h1>
-<form action="" class="contact--form">
-  
+<form class="contact--form" method="POST">
+  <input type="text" name="_gotcha" style="display:none" />
+  {% if site.contact.form.thank_you_redirect %}
+    <input type="hidden" name="_next" value="{{ site.contact.form.thank_you_redirect }}">
+  {% endif %}
   <div class="field contact--form-row">
-    <input name="name" type="text" class="input contact--input">
-    <label for="name" class="label contact--label required">Name</label>
+    <input name="{{ site.contact.form.name.name }}" type="text" class="input contact--input">
+    <label for="name" class="label contact--label required">{{ site.contact.form.name.label }}</label>
   </div>
 
   <div class="field contact--form-row">
-    <input name="email" type="email" class="input contact--input">
-    <label for="email" class="label contact--label required">Email</label>
+    <input name="{{ site.contact.form.email.name }}" type="email" class="input contact--input">
+    <label for="email" class="label contact--label required">{{ site.contact.form.email.label }}</label>
   </div>
 
   <div class="field contact--form-row">
-    <input name="phone" type="text" class="input contact--input">
-    <label for="phone" class="label contact--label">Phone Number</label>
+    <input name="{{ site.contact.form.phone.name }}" type="text" class="input contact--input">
+    <label for="phone" class="label contact--label">{{ site.contact.form.phone.label }}</label>
   </div>
 
   <div class="field contact--form-row">
-    <textarea name="message" class="textarea contact--input"></textarea>
-    <label for="message" class="label contact--label">Message</label>
+    <textarea name="{{ site.contact.form.message.name }}" class="textarea contact--input"></textarea>
+    <label for="message" class="label contact--label">{{ site.contact.form.message.label }}</label>
   </div>
 
   <div class="contact--form-row">
-      <button type="submit" class="contact--submit">Send</button>
+      <button type="submit" class="contact--submit">{{ site.contact.form.submit }}</button>
   </div>
 </form>
+<script>
+  var contactForms = document.querySelectorAll(".contact--form");
+  for ( var i = 0; i < contactForms.length; i++ ) {
+    var form = contactForms[i];
+    form.setAttribute("action", "{{ site.contact.form.action }}");
+  }
+</script>

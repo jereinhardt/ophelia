@@ -32,7 +32,27 @@ about:
     - Web-app design
     - Web-site design
 
+# It is recommended that you use Formspree to
+# handle contact form submissions on your site
 contact:
+  form:
+    action: https://formspree.io/your@email.com
+    email:
+      label: Email
+      name: _replyto
+    message:
+      label: Message
+      name: message
+    name:
+      label: Name
+      name: name
+    phone:
+      label: Phone Number
+      name: phone
+    submit: Send
+    thank_you_redirect: /thank_you
+
+
   title: Get in Touch
 
 footer:

@@ -28,6 +28,21 @@ document.addEventListener("DOMContentLoaded", function() {
     window.scroll({ top: top, behavior: "smooth" });
   }
 
+  function initScrollToggles() {
+    var toggles = document.querySelectorAll("[data-js-scroll-to-target]");
+    toggles.forEach(function(el) {
+      el.addEventListener("click", function(event) {
+        var href = el.attributes.href.value
+        var scrollTargetId = href.substr(1, href.length);
+        var scrollTarget = document.getElementById(scrollTargetId);
+        if ( scrollTarget ) {
+          event.preventDefault();
+          scrollTo(scrollTarget);
+        }
+      });
+    });
+  }
+
   function makeContactFormToggleable() {
     var modalContainer = document.getElementById("contact-modal-container");
     var toggle = document.getElementById("contact-modal-toggle");
@@ -73,4 +88,5 @@ document.addEventListener("DOMContentLoaded", function() {
   wrapContentImagesInFigure();
   makeContactFormToggleable();
   initContactForm();
+  initScrollToggles();
 });
