@@ -1,16 +1,44 @@
 $drawer-timing-function: cubic-bezier(.4, 0, .2, 1);
 $drawer-enter-transition: transform 250ms $drawer-timing-function;
-$drawer-exit-transition: 
-  transform 200ms $drawer-timing-function,
-  opacity 0s 200ms;
+$drawer-exit-transition: transform 200ms $drawer-timing-function;
 $navbar-box-shadow: 0 8px 16px rgba($black, 0.1);
 $navbar-item-padding: $spacing-2 $spacing-3;
 
+@keyframes slidein {
+  from { transform: translateY(-100%); }
+  to   { transform: translateY(0); }
+}
+
+@keyframes slideout {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-100%); }
+}
+
 .navbar {
-  position: relative;
+  position: fixed;
+  top: 0;
+  width: 100%;
 
   @media (min-width: $navbar-breakpoint) {
-    box-shadow: $navbar-box-shadow;
+    background-color: transparent;
+    position: absolute;
+
+    &.fix {
+      animation: slidein 150ms $drawer-timing-function;
+      background-color: $background-color;
+      box-shadow: $navbar-box-shadow;
+      position: fixed;
+      top: 0;
+    }
+
+    &.slide-out {
+      animation: slideout 150ms $drawer-timing-function;
+      background-color: $background-color;
+      box-shadow: $navbar-box-shadow;
+      position: fixed;
+      top: 0;
+      transform: translateY(-100%);
+    }
   }
 }
 
@@ -26,20 +54,24 @@ $navbar-item-padding: $spacing-2 $spacing-3;
   }
 }
 
+.navbar-menu-container {
+  background: inherit;
+  position: relative;
+}
+
 .navbar-menu {
-  bottom: calc(100% - 52px);
   box-shadow: $navbar-box-shadow;
   display: flex;
-  opacity: 0;
-  position: fixed;
+  position: absolute;
   transition: $drawer-exit-transition;
   width: 100%;
+  top: 100%;
+  transform: translateY(-100%);
   z-index: $navbar-z - 1;
 
   .navbar-checkbox:checked ~ & {
-    opacity: 1;
     transition: $drawer-enter-transition;
-    transform: translateY(100%);
+    transform: translateY(0);
   }
 
   @media (min-width: $navbar-breakpoint) {
@@ -62,6 +94,11 @@ $navbar-item-padding: $spacing-2 $spacing-3;
 
 .navbar-burger {
   height: auto;
+
+  &:hover,
+  &:focus {
+    background-color: darken($background-color, 10%);
+  }
 }
 
 .navbar-logo-text {
@@ -80,17 +117,17 @@ $navbar-item-padding: $spacing-2 $spacing-3;
 a.navbar-item {
   &:hover,
   &:focus {
-    background-color: $white;
+    background-color: inherit;
   }
 }
 
 .navbar-item--text {
-  color: $black;
+  color: invert($background-color);
   font-weight: $weight-semibold;
   position: relative;
 
   &::after {
-    background: $black;
+    background: invert($background-color);
     content: "";
     display: block;
     height: 3px;
@@ -103,7 +140,7 @@ a.navbar-item {
 
   .navbar-item:hover &,
   .navbar-item:focus & {
-    color: $black;
+    color: invert($background-color);
 
     &::after {
       width: 100%;
@@ -111,6 +148,30 @@ a.navbar-item {
   }
 
   @media (min-width: $navbar-breakpoint) {
+    color: $white;
+
+    &::after {
+      background: $white;
+    }
+
+    .navbar-item:hover &,
+    .navbar-item:focus & {
+      color: $white;
+    }
+
+    .navbar.fix & {
+      color: invert($background-color);
+
+      &::after {
+        background: invert($background-color);
+      }
+
+      .navbar-item:hover &,
+      .navbar-item:focus & {
+        color: invert($background-color);
+      }      
+    }
+
     .navbar-item.underline & {
       &::after {
         width: 100%;

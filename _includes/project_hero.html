@@ -1,4 +1,12 @@
-<div class="project--hero" {% if page.background %} style="background: {{ page.background_color }}" {% elsif page.image %} style="background-image: url('{{ page.image  }}')" {% endif %}>
+<div
+  class="project--hero"
+  data-js-header-section="true"
+  {% if page.background %} 
+    style="background: {{ page.background_color }}"
+  {% elsif page.image %}
+    style="background-image: url('{{ page.image  }}')"
+  {% endif %}
+  >
   <div class="container">
     <h1 class="project--title">
       {{ page.title }}

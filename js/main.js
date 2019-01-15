@@ -3,19 +3,22 @@ document.addEventListener("DOMContentLoaded", function() {
     for (i = 0; i < samePageLinks.length; i++ ) {
       var link = samePageLinks[i];
       var target = document.getElementById(link.targetId);
-      var navbarHeight = 55;
-      var highlightClass = "underline";
-      var start = target.offsetTop - navbarHeight;
-      var end = target.offsetTop + target.offsetHeight - navbarHeight;
-      if ( window.pageYOffset > start && window.pageYOffset <= end ) {
-        link.element.classList.add(highlightClass);
-      } else {
-        link.element.classList.remove(highlightClass);
+      if ( target ) {
+        var navbarHeight = 55;
+        var highlightClass = "underline";
+        var start = target.offsetTop - navbarHeight;
+        var end = target.offsetTop + target.offsetHeight - navbarHeight;
+        if ( window.pageYOffset > start && window.pageYOffset <= end ) {
+          link.element.classList.add(highlightClass);
+        } else {
+          link.element.classList.remove(highlightClass);
+        }
       }
     }
   }
 
   function initializeNavbar() {
+    var navbar = document.getElementById("main-navigation");
     var mobileNavCheckbox = document.getElementById("mobile-nav-checkbox");
     var mobileNavToggle = document.getElementById("mobile-nav-toggle");
     mobileNavToggle.addEventListener("click", function(event) {
@@ -44,6 +47,31 @@ document.addEventListener("DOMContentLoaded", function() {
     if ( samePageLinks.length > 0 ) {
       window.addEventListener("scroll", function(event) {
         listenForNavbarOverlap(samePageLinks);
+      });
+    }
+
+    var headerSection = document.querySelector("[data-js-header-section]");
+    if ( headerSection ) {
+      var breakpoint = headerSection.offsetHeight - 60;
+      var revealed = false;
+      var fixClass = "fix";
+      var slideClass = "slide-out";
+
+      window.addEventListener("scroll", function(event) {
+        if ( window.pageYOffset >= breakpoint ) {
+          navbar.classList.add(fixClass);
+          revealed = true;
+        } else if ( window.pageYOffset < breakpoint && revealed ) {
+          navbar.classList.add(slideClass);
+          navbar.classList.remove(fixClass);
+          setTimeout(function() { 
+            navbar.classList.remove(slideClass); 
+            revealed = false;
+          }, 150);
+        } else {
+          navbar.classList.remove(fixClass);
+          revealed = false;
+        }
       });
     }
   }

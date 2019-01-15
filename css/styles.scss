@@ -2,6 +2,7 @@
 ---
 
 $primary-color: {{ site.styles.colors.primary }} !default;
+$background-color: #fff;
 
 @import "variables";
 @import "bulma/bulma.sass";
