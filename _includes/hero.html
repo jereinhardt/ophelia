@@ -1,22 +1,22 @@
-<section class="hero is-medium is-primary is-bold is-fullheight">
+<section class="hero is-medium is-primary is-bold is-fullheight" {% if site.hero.background %} style="background-image: {{ site.hero.background  }}" {% endif %}>
   <div class="hero-body">
     <div class="container ">
-      <h1 class="title is-spaced hero--component">
+      <h1 class="title is-spaced hero--component hero--title">
         {{ site.hero.title }}
       </h1>
       {% if site.hero.subtitle %}
-        <h3 class="subtitle hero--component">
+        <h3 class="subtitle hero--component hero--subtitle">
           {{ site.hero.subtitle }}
         </h3>
       {% endif %}
       {% if site.hero.description %}
-        <h5 class="subtitle hero--component">
+        <h5 class="subtitle hero--component hero--description">
           {{ site.hero.description}}
         </h5>
       {% endif %}
       {% if site.hero.cta_text && site.hero.cta_path %}
         <div class="hero--cta-container hero-component">
-          <a href="{{ site.hero.cta_path }}" class="hero--cta button is-warning" data-js-scroll-to-target>
+          <a href="{{ site.hero.cta_path }}" class="hero--cta button" data-js-scroll-to-target>
             {{ site.hero.cta_text }}
           </a>
         </div>

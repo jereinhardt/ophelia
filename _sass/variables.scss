@@ -1,0 +1,43 @@
+@import "fonts";
+
+/*********************
+
+  INDEX
+
+    1. Font Styles
+    2. Spacing
+
+*********************/
+
+
+/*********************
+1. Font Styles
+*********************/
+
+$weight-ultrabold: 900;
+$weight-black: 800;
+$weight-bold: 700;
+$weight-semibold: 600;
+$weight-medium: 500;
+$weight-normal: 400;
+$weight-light: 300;
+$weight-thin: 200;
+$weight-ultralight: 100;
+
+$family-primary: 'GT Walsheim', -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
+
+
+/*********************
+2. Spacing
+*********************/
+
+$spacing-1: 0.25rem;
+$spacing-2: 0.5rem;
+$spacing-3: 0.725rem;
+$spacing-4: 1rem;
+$spacing-5: 1.25rem;
+$spacing-6: 1.6rem;
+$spacing-7: 2.3rem;
+$spacing-8: 3rem;
+$spacing-9: 4rem;
+$spacing-10: 5rem;

@@ -1,6 +1,8 @@
 $drawer-timing-function: cubic-bezier(.4, 0, .2, 1);
 $drawer-enter-transition: transform 250ms $drawer-timing-function;
-$drawer-exit-transition: transform 200ms $drawer-timing-function;
+$drawer-exit-transition: 
+  transform 200ms $drawer-timing-function,
+  opacity 0s 200ms;
 $navbar-box-shadow: 0 8px 16px rgba($black, 0.1);
 $navbar-item-padding: $spacing-2 $spacing-3;
 
@@ -28,21 +30,24 @@ $navbar-item-padding: $spacing-2 $spacing-3;
   bottom: calc(100% - 52px);
   box-shadow: $navbar-box-shadow;
   display: flex;
+  opacity: 0;
   position: fixed;
   transition: $drawer-exit-transition;
   width: 100%;
   z-index: $navbar-z - 1;
 
   .navbar-checkbox:checked ~ & {
+    opacity: 1;
     transition: $drawer-enter-transition;
     transform: translateY(100%);
   }
 
   @media (min-width: $navbar-breakpoint) {
     box-shadow: none;
-    width: auto;
+    opacity: 1;
     position: static;
     transform: none;
+    width: auto;
   }
 }
 
@@ -93,7 +98,7 @@ a.navbar-item {
     position: absolute;
     top: 100%;
     width: 0%;
-    transition: width 200ms ease-in;
+    transition: width 150ms $drawer-timing-function;
   }
 
   .navbar-item:hover &,

@@ -1,0 +1,42 @@
+.hero {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero--title,
+.hero--subtitle,
+.hero--description {
+}
+
+.hero--title {
+  font-weight: $weight-bold;
+  font-size: $size-1;
+}
+
+.hero--subtitle {
+  font-weight: $weight-semibold;
+  font-size: $size-4;  
+}
+
+.hero--description {
+  font-weight: $weight-semibold;
+  font-size: $size-3;
+}
+
+.hero--cta {
+  background-color: transparent;
+  border: 3px solid $white;
+  border-radius: 0;
+  color: $white;
+  font-size: $size-4;
+  font-weight: $weight-semibold;
+  transition: all 150ms ease-in-out;
+
+  &:hover,
+  &:focus {
+    background-color: $primary;
+    border-color: $primary;
+    color: $white;
+  }
+}

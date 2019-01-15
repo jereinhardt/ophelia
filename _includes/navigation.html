@@ -22,7 +22,13 @@
   <div class="navbar-menu" id="main-nav-menu">
     <div class="navbar-end">
       {% for item in site.main_navigation.items %}
-        <a href="{{ item.path }}" class="navbar-item">
+        <a 
+          href="{{ item.path }}"
+          class="navbar-item"
+          {% if item.path | slice: 0 | == "#" %}
+            data-js-scroll-to-target="true"
+          {% endif %}
+        >
           <span class="navbar-item--text">            
             {{ item.text }}
           </span>
