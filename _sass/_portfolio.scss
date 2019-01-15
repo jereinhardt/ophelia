@@ -77,7 +77,8 @@ $project-preview-transition: 250ms ease-in;
   transition: background 250ms ease-in;
   z-index: 1;
 
-  .portfolio--project:hover & {
+  .portfolio--project:hover &,
+  .portfolio--project:focus & {
     background: $black;
   }
 }
@@ -105,7 +106,8 @@ $project-preview-transition: 250ms ease-in;
     width: 0;
     top: 100%;
 
-    .portfolio--project:hover & {
+    .portfolio--project:hover &,
+    .portfolio--project:focus & {
       background: $white;
       width: 100%;
     } 
@@ -116,7 +118,8 @@ $project-preview-transition: 250ms ease-in;
 .portfolio--project-description {
   transition: color $project-preview-transition;
   
-  .portfolio--project:hover & {
+  .portfolio--project:hover &,
+  .portfolio--project:focus & {
     color: $white;
   }
 }
