@@ -109,4 +109,12 @@ a.navbar-item {
       width: 100%;
     }
   }
+
+  @media (min-width: $navbar-breakpoint) {
+    .navbar-item.underline & {
+      &::after {
+        width: 100%;
+      }      
+    }
+  }
 }

@@ -1,4 +1,20 @@
 document.addEventListener("DOMContentLoaded", function() {
+  function listenForNavbarOverlap(samePageLinks) {
+    for (i = 0; i < samePageLinks.length; i++ ) {
+      var link = samePageLinks[i];
+      var target = document.getElementById(link.targetId);
+      var navbarHeight = 55;
+      var highlightClass = "underline";
+      var start = target.offsetTop - navbarHeight;
+      var end = target.offsetTop + target.offsetHeight - navbarHeight;
+      if ( window.pageYOffset > start && window.pageYOffset <= end ) {
+        link.element.classList.add(highlightClass);
+      } else {
+        link.element.classList.remove(highlightClass);
+      }
+    }
+  }
+
   function initializeNavbar() {
     var mobileNavCheckbox = document.getElementById("mobile-nav-checkbox");
     var mobileNavToggle = document.getElementById("mobile-nav-toggle");
@@ -11,7 +27,25 @@ document.addEventListener("DOMContentLoaded", function() {
         mobileNavCheckbox.checked = true;
         mobileNavToggle.classList.add("is-active");
       }
-    });    
+    });
+
+    var navbarLinks = document.querySelectorAll(".navbar-end a.navbar-item");  
+    var samePageLinks = [];
+    for ( var i = 0; i < navbarLinks.length; i++ ) {
+      var link = navbarLinks[i];
+      if ( link.attributes.href.value.substr(0, 1) == "#" ) {
+        samePageLinks.push({
+          element: link,
+          targetId: link.attributes.href.value.substr(1) 
+        });
+      }
+    }
+
+    if ( samePageLinks.length > 0 ) {
+      window.addEventListener("scroll", function(event) {
+        listenForNavbarOverlap(samePageLinks);
+      });
+    }
   }
 
   function wrapContentImagesInFigure() {
