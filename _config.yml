@@ -4,10 +4,10 @@ main_navigation:
   cta_path: "#"
   cta_text: Contact Me
   items:
-  - text: Portfolio
-    path: "/#portfolio"
   - text: About
     path: "/#about"
+  - text: Portfolio
+    path: "/#portfolio"
   site_name: "JER"
 
 hero:

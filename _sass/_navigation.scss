@@ -92,6 +92,17 @@ $navbar-item-padding: $spacing-2 $spacing-3;
   @media (min-width: $navbar-breakpoint) {
     width: initial;
   }
+
+  .navbar-item {
+    padding-left: $spacing-5;
+    padding-right: $spacing-5;
+  }
+
+  .navbar-item,
+  .navbar--primary-cta {
+    font-size: $size-5;
+    font-weight: $weight-bold;
+  }
 }
 
 .navbar-burger {
@@ -127,7 +138,6 @@ a.navbar-item {
 
 .navbar-item--text {
   color: invert($background-color);
-  font-weight: $weight-semibold;
   position: relative;
 
   &::after {
