@@ -10,9 +10,20 @@ $input-transition: all 200ms ease-out;
   text-align: center;
 }
 
+.contact--form {
+  .required::after {
+    color: inherit;
+    content: "*";
+  }
+}
+
 .contact--form-row {
   padding-top: $spacing-7 - 0.3rem;
   position: relative;
+}
+
+.contact--form-error-message {
+  color: darken($warning, 20%);
 }
 
 .contact--label {
@@ -51,6 +62,13 @@ $input-transition: all 200ms ease-out;
   &:focus {
     border-color: $black;
     box-shadow: none;
+  }
+
+  &.is-warning {
+    &:hover,
+    &:focus {
+      box-shadow: none;    
+    }
   }
 }
 

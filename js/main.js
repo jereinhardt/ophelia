@@ -132,17 +132,62 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function initContactForm() {
-    var inputs = document.querySelectorAll(
-      ".contact--form input, .contact--form textarea"
-    );
-    inputs.forEach(function(el) {
-      el.addEventListener("keyup", function(event) {
-        if ( el.value === "" ) {
-          el.classList.remove("has-content");
-        } else {
-          el.classList.add("has-content")
-        }
+    var form = document.getElementById("contact-form");
+    if ( form ) {
+      initContactFormValidation()
+      var inputs = document.querySelectorAll(
+        ".contact--form input, .contact--form textarea"
+      );
+      inputs.forEach(function(el) {
+        el.addEventListener("keyup", function(event) {
+          if ( el.value === "" ) {
+            el.classList.remove("has-content");
+          } else {
+            el.classList.add("has-content")
+          }
+        });
       });
+    }
+  }
+
+  function initContactFormValidation() {
+    var form = document.getElementById("contact-form");
+    var validateIsPresent = function(field) {
+      var input = field.querySelector("[data-js-input]")
+      return input.value != "";
+    }
+    var validateIsEmail = function(field) {
+      var input = field.querySelector("[data-js-input]")
+      var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return regex.test(input.value.toLowerCase());
+    }
+    validations = {
+      "present": validateIsPresent,
+      "email": validateIsEmail
+    };
+    form.addEventListener("submit", function(event) {
+      var fields = form.querySelectorAll("[data-js-validate]");
+      var invalidFields = [];
+      for (var i = 0; i < fields.length; i++) {
+        var field = fields[i];
+        var validation = field.dataset.jsValidate;
+        if ( !validations[validation](field) ) {
+          invalidFields.push(field);
+        }
+      }
+      if ( invalidFields.length > 0 ) {
+        event.preventDefault();
+        for (var i = 0; i < fields.length; i++) {
+          var field = fields[i];
+          field.querySelector("[data-js-input]").classList.remove("is-warning");
+          field.querySelector("[data-js-warning]").classList.add("hidden");
+        }
+        for (var i = 0; i < invalidFields.length; i++) {
+          var field = invalidFields[i];
+          field.querySelector("[data-js-input]").classList.add("is-warning");
+          field.querySelector("[data-js-warning]").classList.remove("hidden");
+        }
+      }
     });
   }
 

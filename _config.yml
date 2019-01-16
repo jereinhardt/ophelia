@@ -42,12 +42,15 @@ contact:
     email:
       label: Email
       name: _replyto
+      error: Please enter a valid email address.
     message:
       label: Message
       name: message
+      error: Please leave a message.
     name:
       label: Name
       name: name
+      error: Please enter your name.
     phone:
       label: Phone Number
       name: phone

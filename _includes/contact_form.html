@@ -1,17 +1,19 @@
 <h1 class="title contact--title">{{ site.contact.title }}</h1>
-<form class="contact--form" method="POST">
+<form id="contact-form" class="contact--form" method="POST">
   <input type="text" name="_gotcha" style="display:none" />
   {% if site.contact.form.thank_you_redirect %}
     <input type="hidden" name="_next" value="{{ site.contact.form.thank_you_redirect }}">
   {% endif %}
-  <div class="field contact--form-row">
-    <input name="{{ site.contact.form.name.name }}" type="text" class="input contact--input">
+  <div class="field contact--form-row" data-js-validate="present">
+    <input name="{{ site.contact.form.name.name }}" type="text" class="input contact--input" data-js-input="true">
     <label for="name" class="label contact--label required">{{ site.contact.form.name.label }}</label>
+    <div class="contact--form-error-message hidden" data-js-warning="true">{{ site.contact.form.name.error }}</div>
   </div>
 
-  <div class="field contact--form-row">
-    <input name="{{ site.contact.form.email.name }}" type="email" class="input contact--input">
+  <div class="field contact--form-row" data-js-validate="email">
+    <input name="{{ site.contact.form.email.name }}" type="email" class="input contact--input" data-js-input="true">
     <label for="email" class="label contact--label required">{{ site.contact.form.email.label }}</label>
+    <div class="contact--form-error-message hidden" data-js-warning="true">{{ site.contact.form.email.error }}</div>
   </div>
 
   <div class="field contact--form-row">
@@ -19,9 +21,10 @@
     <label for="phone" class="label contact--label">{{ site.contact.form.phone.label }}</label>
   </div>
 
-  <div class="field contact--form-row">
-    <textarea name="{{ site.contact.form.message.name }}" class="textarea contact--input"></textarea>
-    <label for="message" class="label contact--label">{{ site.contact.form.message.label }}</label>
+  <div class="field contact--form-row" data-js-validate="present">
+    <textarea name="{{ site.contact.form.message.name }}" class="textarea contact--input" data-js-input="true"></textarea>
+    <label for="{{ site.contact.form.message.name }}" class="label contact--label required">{{ site.contact.form.message.label }}</label>
+    <div class="contact--form-error-message hidden" data-js-warning="true">{{ site.contact.form.message.error }}</div>
   </div>
 
   <div class="contact--form-row">
