@@ -15,6 +15,7 @@ $navbar-item-padding: $spacing-2 $spacing-3;
 }
 
 .navbar {
+  background: $background-color;
   position: fixed;
   top: 0;
   width: 100%;
@@ -60,6 +61,7 @@ $navbar-item-padding: $spacing-2 $spacing-3;
 }
 
 .navbar-menu {
+  background-color: inherit;
   box-shadow: $navbar-box-shadow;
   display: flex;
   position: absolute;
@@ -93,11 +95,13 @@ $navbar-item-padding: $spacing-2 $spacing-3;
 }
 
 .navbar-burger {
+  color: invert($background-color);
   height: auto;
 
   &:hover,
   &:focus {
     background-color: darken($background-color, 10%);
+    color: invert($background-color);
   }
 }
 
@@ -176,6 +180,39 @@ a.navbar-item {
       &::after {
         width: 100%;
       }      
+    }
+  }
+}
+
+.navbar--primary-cta {
+  background: transparent;
+  border: 2px solid invert($background-color);
+  border-radius: 0;
+  color: invert($background-color);
+  font-weight: $weight-semibold;
+  transition: all 150ms $drawer-timing-function;
+
+  &:hover,
+  &:focus {
+    background: $primary;
+    border-color: $primary;
+    color: $white;
+  }
+
+  @media (min-width: $navbar-breakpoint) {
+    border-color: $white;
+    color: $white;
+
+    .navbar.fix & {
+      border-color: invert($background-color);
+      color: invert($background-color);
+
+      &:hover,
+      &:focus {
+        background: $primary;
+        border-color: $primary;
+        color: $white;
+      }
     }
   }
 }
