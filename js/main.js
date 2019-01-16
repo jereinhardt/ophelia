@@ -34,12 +34,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
     var navbarLinks = document.querySelectorAll(".navbar-end a.navbar-item");  
     var samePageLinks = [];
+    var regex = /^(\/.*)#(.*)/;
+
     for ( var i = 0; i < navbarLinks.length; i++ ) {
       var link = navbarLinks[i];
-      if ( link.attributes.href.value.substr(0, 1) == "#" ) {
+      var matches = link.attributes.href.value.match(regex);
+      if ( matches && matches[1] == window.location.pathname ) {
         samePageLinks.push({
           element: link,
-          targetId: link.attributes.href.value.substr(1) 
+          targetId: matches[2]
         });
       }
     }
@@ -93,15 +96,20 @@ document.addEventListener("DOMContentLoaded", function() {
   function initScrollToggles() {
     var toggles = document.querySelectorAll("[data-js-scroll-to-target]");
     toggles.forEach(function(el) {
-      el.addEventListener("click", function(event) {
-        var href = el.attributes.href.value
-        var scrollTargetId = href.substr(1, href.length);
-        var scrollTarget = document.getElementById(scrollTargetId);
-        if ( scrollTarget ) {
-          event.preventDefault();
-          scrollTo(scrollTarget);
-        }
-      });
+
+      var regex = /^(\/.*)#(.*)/;
+      var matches = el.attributes.href.value.match(regex);
+      if ( matches && window.location.pathname == matches[1] ) {
+        el.addEventListener("click", function(event) {
+          var scrollTargetId = matches[2];
+          var scrollTarget = document.getElementById(scrollTargetId);
+          
+          if ( scrollTarget ) {
+            event.preventDefault();
+            scrollTo(scrollTarget);
+          }
+        });
+      }
     });
   }
 

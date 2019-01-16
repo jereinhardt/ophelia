@@ -5,9 +5,9 @@ main_navigation:
   cta_text: Contact Me
   items:
   - text: Portfolio
-    path: "#portfolio"
+    path: "/#portfolio"
   - text: About
-    path: "#about"
+    path: "/#about"
   site_name: "JER"
 
 hero:
