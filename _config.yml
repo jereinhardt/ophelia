@@ -22,16 +22,17 @@ portfolio:
   title: Portfolio
 
 about:
+  image: /assets/img/profile.png
   title: About Me
   description: >
     I make <strong>more working mockups</strong> of working websites and 
     applications than any other designer working today.
-  skills:
-    - Prototyping animation
-    - Wireframe creation
-    - Story-based design
-    - Web-app design
-    - Web-site design
+  # skills:
+  #   - Prototyping animation
+  #   - Wireframe creation
+  #   - Story-based design
+  #   - Web-app design
+  #   - Web-site design
 
 # It is recommended that you use Formspree to
 # handle contact form submissions on your site
@@ -61,6 +62,7 @@ footer:
 
 styles:
   colors:
+    background: "#fff"
     primary: "#000"
 
 collections:

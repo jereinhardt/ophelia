@@ -9,7 +9,7 @@
 }
 
 .about--skills-title {
-  color: $grey;
+  color: lighten(invert($background-color), 30%);
   font-size: $size-4;
   font-weight: $weight-semibold;
   margin-bottom: $spacing-3;
@@ -26,6 +26,6 @@
 }
 
 .about--skill {
-  color: $grey;
+  color: lighten(invert($background-color), 30%);
   font-size: $size-5;
 }

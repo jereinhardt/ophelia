@@ -17,11 +17,16 @@
 .home--body {
   > .section {
     &:nth-child(2n) {
-      background: $white;
+      background: $background-color;
     }
 
     &:nth-child(2n + 1) {
-      background: darken($white-bis, 3%);
+      background: darken($background-color, 5%);
     }
   }
+}
+
+.home--body > .section,
+.section--title {
+  color: invert($background-color);
 }
