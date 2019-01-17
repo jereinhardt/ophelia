@@ -6,6 +6,8 @@
 
     1. Font Styles
     2. Spacing
+    3. Colors
+    4. Bulma Replacements
 
 *********************/
 
@@ -41,3 +43,21 @@ $spacing-7: 2.3rem;
 $spacing-8: 3rem;
 $spacing-9: 4rem;
 $spacing-10: 5rem;
+
+/*********************
+3. Colors
+*********************/
+
+$primary-color: hsl(171, 100%, 41%) !default;
+$secondary-color: hsl(204, 86%,  53%) !default;
+$warning-color: hsl(48,  100%, 67%) !default;
+$background-color: hsl(0, 100%, 100%) !default;
+
+/*********************
+4. Bulma Replacements
+*********************/
+
+$primary: $primary-color;
+$info: $secondary-color;
+$warning: $warning-color;
+$background: $background-color;

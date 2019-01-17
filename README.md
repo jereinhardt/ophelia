@@ -28,7 +28,30 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here. Describe your available layouts, includes, and/or sass.
+### Importing Styles
+
+Ophelia allows you to configure styles by overriding Sass variables.  To do this, you will need to make a file in your site at `/assets/css/styles.scss` which should look like:
+
+```sass
+---
+---
+
+$primary-color: blue;
+$secondary-color: red;
+
+@import "ophelia";
+```
+
+Even if you don't want to customize your styles, you MUST use `@import "ophelia"` in order to use the theme's default styles.
+
+The Sass variables you can override are:
+
+- `$primary-color` - the primary color of your site's color scheme.
+- `$secondary-color` - the secondary color of your site's color scheme.  This should be a color that compliments the primay color.
+- `$warning-color` - A contrasting color in your site's color scheme that is used to highlight errors or make elements stand out as important.
+- `$background-color` - The color that will be used as the primary background of your site.  It is recommened that this color be a white or a light shade of gray, or (if you prefer 'dark' themes) black or a very dark shade of grey.
+
+### Configuration
 
 ## Contributing
 
