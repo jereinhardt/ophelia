@@ -51,7 +51,10 @@ $spacing-10: 5rem;
 $primary-color: hsl(171, 100%, 41%) !default;
 $secondary-color: hsl(204, 86%,  53%) !default;
 $warning-color: hsl(48,  100%, 67%) !default;
-$background-color: hsl(0, 100%, 100%) !default;
+$success-color: hsl(141, 71%,  48%) !default;
+$background-color: hsl(0, 0%, 96%) !default;
+$text-color: findTextColorInvert($background-color);
+$secondary-text-color: findTextColorSecondary($background-color);
 
 /*********************
 4. Bulma Replacements

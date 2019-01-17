@@ -35,24 +35,16 @@ $project-preview-transition: 250ms ease-in;
     position: relative;
   }
 
-  &:nth-child(5n + 1) {
-    background-color: $primary;
+  &:nth-child(3n + 1) {
+    background-image: background-gradient($primary-color);
   }
 
-  &:nth-child(5n + 2) {
-    background-color: $info;
+  &:nth-child(3n + 2) {
+    background-image: background-gradient($secondary-color);
   }
 
-  &:nth-child(5n + 3) {
-    background-color: $success;
-  }
-
-  &:nth-child(5n + 4) {
-    background-color: $warning;
-  }
-
-  &:nth-child(5n) {
-    background-color: $danger;
+  &:nth-child(3n + 3) {
+    background-image: background-gradient($success-color);
   }
 }
 

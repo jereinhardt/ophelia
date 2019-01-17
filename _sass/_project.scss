@@ -15,9 +15,10 @@ $default-showcase-gradient: linear-gradient(
 
 .project--hero {
   align-items: center;
-  background-color: $white;
+  background-image: background-gradient($primary-color);
   background-position: center;
   background-size: cover;
+  color: findTextColorInvert($primary-color);
   display: flex;
   justify-content: center;
   min-height: 400px;
@@ -31,7 +32,7 @@ $default-showcase-gradient: linear-gradient(
 }
 
 .project--bar {
-  background: $grey-lighter;
+  background: contrastInverse($background-color, 15%);
   height: 20px;
   margin-left: -$spacing-9;
   margin-right: -$spacing-9;
@@ -57,22 +58,6 @@ $default-showcase-gradient: linear-gradient(
   position: relative;
 }
 
-// .project--showcase-filter {
-//   background-color: $grey-light;
-//   bottom: 0;
-//   left: 0;
-//   opacity: 0.1;
-//   position: absolute;
-//   right: 0;
-//   top: 0;
-//   transition: opacity $showcase-transition-duration;
-//   z-index: 1;
-
-//   .project--showcase-link:hover & {
-//     opacity: 0.5;
-//   }
-// }
-
 .project--showcase-text {
   color: $white;
   font-size: $size-1;
@@ -91,6 +76,7 @@ $default-showcase-gradient: linear-gradient(
 }
 
 .project--content {
+  color: $text-color;
   font-size: $size-5;
   max-width: 800px;
   padding: $spacing-9 $spacing-9;

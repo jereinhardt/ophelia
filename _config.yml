@@ -12,7 +12,7 @@ main_navigation:
 
 hero:
   background: url('/assets/img/hero.jpg')
-  cta_path: "#about"
+  cta_path: "/#about"
   cta_text: Learn More
   description: Great at finding solutions that work.  Not so great at swimming.
   subtitle: would-be nun turned designer
@@ -27,12 +27,12 @@ about:
   description: >
     I make <strong>more working mockups</strong> of working websites and 
     applications than any other designer working today.
-  # skills:
-  #   - Prototyping animation
-  #   - Wireframe creation
-  #   - Story-based design
-  #   - Web-app design
-  #   - Web-site design
+  skills:
+    - Prototyping animation
+    - Wireframe creation
+    - Story-based design
+    - Web-app design
+    - Web-site design
 
 # It is recommended that you use Formspree to
 # handle contact form submissions on your site

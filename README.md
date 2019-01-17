@@ -48,6 +48,7 @@ The Sass variables you can override are:
 
 - `$primary-color` - the primary color of your site's color scheme.
 - `$secondary-color` - the secondary color of your site's color scheme.  This should be a color that compliments the primay color.
+- `$success-color` - the color that marks a positive event or action.
 - `$warning-color` - A contrasting color in your site's color scheme that is used to highlight errors or make elements stand out as important.
 - `$background-color` - The color that will be used as the primary background of your site.  It is recommened that this color be a white or a light shade of gray, or (if you prefer 'dark' themes) black or a very dark shade of grey.
 

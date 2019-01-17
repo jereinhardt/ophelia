@@ -7,7 +7,9 @@
     {% include navigation.html %}
     {% include project_hero.html %}
     {% include project_content.html %}
-    {% include project_showcase.html %}
+    {% if page.showcase_text %}
+      {% include project_showcase.html %}
+    {% endif %}
     {% include contact.html %}
     {% include footer.html %}
   </body>
