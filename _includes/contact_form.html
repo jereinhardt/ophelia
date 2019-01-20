@@ -38,3 +38,16 @@
     form.setAttribute("action", "{{ site.contact.form.action }}");
   }
 </script>
+{% if site.social %}
+  <ul class="contact--social-links">
+    {% for media in site.social %}
+      <li class="contact--social-link-item">
+        <a href="{{ media.link }}" class="contact--social-link">
+          <img src="/assets/img/social/{{ media.name | downcase }}.svg" alt="{{ media.name }}" width="60" height="60">
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
+  
+</ul>

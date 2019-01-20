@@ -60,6 +60,22 @@ contact:
 
   title: Get in Touch
 
+social:
+  - name: Email
+    link: mailto:opheliaofdenmark@gmail.com
+  - name: Twitter
+    link: "#"
+  - name: LinkedIn
+    link: "#"
+  # - name: Instagram
+  #   link: "#"
+  # - name: Youtube
+  #   link: "#"
+  # - name: Pinterest
+  #   link: "#"
+  # - name: GooglePlus
+  #   link: "#"
+
 footer:
   owner: Ophelia of Denmark
 
