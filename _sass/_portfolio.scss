@@ -79,11 +79,25 @@ $project-preview-transition: 250ms ease-in;
   color: transparent;
   font-size: $size-5;
   margin-top: -0.5rem;
+  transition: color $project-preview-transition;
+  
+  .portfolio--project:hover &,
+  .portfolio--project:focus & {
+    color: $white;
+  }
 }
 
 .portfolio--project-title {
+  color: $white;
   display: inline-block;
   position: relative;
+  opacity: 0;
+  transition: opacity $project-preview-transition;
+
+  .portfolio--project:hover &,
+  .portfolio--project:focus & {
+    opacity: 1;
+  }
 
   &:after {
     background: transparent;
@@ -103,16 +117,6 @@ $project-preview-transition: 250ms ease-in;
       background: $white;
       width: 100%;
     } 
-  }
-}
-
-.portfolio--project-title,
-.portfolio--project-description {
-  transition: color $project-preview-transition;
-  
-  .portfolio--project:hover &,
-  .portfolio--project:focus & {
-    color: $white;
   }
 }
 

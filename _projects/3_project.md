@@ -1,7 +1,8 @@
 ---
-title: Third Project
-short_description: This is the short description
+title: Chrono Dojo
+description: A time-saving app for anyone on the go
+image: "/assets/img/project_3.jpg"
 project_link: #
 ---
 
-# This is my first project.  I hope it goes well, for in the coming years, there will be much more that needs to happen to make the people around other people ensure that there is nothing that will go wrong with anything at all so help me god.
+This project was to create a time-saving app to beat all time saving apps.

@@ -27,12 +27,12 @@ about:
   description: >
     I make <strong>more working mockups</strong> of working websites and 
     applications than any other designer working today.
-  skills:
-    - Prototyping animation
-    - Wireframe creation
-    - Story-based design
-    - Web-app design
-    - Web-site design
+  # skills:
+  #   - Prototyping animation
+  #   - Wireframe creation
+  #   - Story-based design
+  #   - Web-app design
+  #   - Web-site design
 
 # It is recommended that you use Formspree to
 # handle contact form submissions on your site
@@ -107,6 +107,9 @@ include: ["_projects"]
 
 plugins:
   - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
+# url: yoursiteurlhere.com this is for the jekyll-sitemap plugin
 paginate: 5
 
