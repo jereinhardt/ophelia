@@ -6,7 +6,7 @@ image: "/assets/img/project_1.jpg"
 // background: "rgba(0, 0, 0, 0.5)"
 // showcase_background: "#fff"
 showcase_link_path: "#"
-showcase_text: View on Github
+showcase_text: Buy the Book
 ---
 
 # About the book

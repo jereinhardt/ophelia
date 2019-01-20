@@ -106,10 +106,7 @@ exclude: []
 include: ["_projects"]
 
 plugins:
-  - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-sitemap
 
 # url: yoursiteurlhere.com this is for the jekyll-sitemap plugin
-paginate: 5
-
