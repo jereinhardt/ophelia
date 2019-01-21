@@ -13,6 +13,17 @@
         </div>
         <div class="portfolio--project-overlay"></div>
       </a>
-    {% endfor %}      
+    {% endfor %}
+    {% for project in site.portfolio.items %}
+      <a href="{{ project.link }}" class="portfolio--project" {% if project.image %} style="background-image: url('{{ project.image }}')" {% endif %}>
+        <div class="portfolio--project-content">
+          <h3 class="portfolio--project-title title">
+            {{ project.title }}
+          </h3>
+          <h5 class="portfolio--project-description">{{ project.description | truncate: 90 }}</h5>
+        </div>
+        <div class="portfolio--project-overlay"></div>
+      </a>      
+    {% endfor %}
   </div>
 </section>

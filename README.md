@@ -86,6 +86,10 @@ hero:
 
 portfolio:
   title: The title of the portfolio section.
+  items: a map of extra items that will be appended to the end of your portfolio
+    title: The name of the project
+    description: A description of the project
+    link: The link to the project
 
 about:
   image: The main image of the about section.  Can be an image of you or something related to your work.

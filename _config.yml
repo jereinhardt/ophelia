@@ -21,6 +21,11 @@ hero:
 
 portfolio:
   title: Portfolio
+  items:
+    # - title: Github
+    #   description: View my Github profile
+    #   image: assets/img/github.png
+    #   link: "https://github.com/jereinhardt"
 
 about:
   image: /assets/img/profile.png
@@ -58,6 +63,7 @@ contact:
     submit: Send
     thank_you_redirect: /thank_you
   title: Get in Touch
+
 
 social:
   - name: Email
