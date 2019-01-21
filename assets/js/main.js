@@ -99,9 +99,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
       var regex = /^(\/.*)#(.*)/;
       var matches = el.attributes.href.value.match(regex);
-      if ( matches && window.location.pathname == matches[1] ) {
+      if ( 
+        ( matches && window.location.pathname == matches[1] ) ||
+        el.attributes.href.value.substr(0, 1) == "#"
+      ) {
         el.addEventListener("click", function(event) {
-          var scrollTargetId = matches[2];
+          var scrollTargetId;
+          if ( matches ) {
+            scrollTargetId = matches[2];
+          } else {
+            scrollTargetId = el.attributes.href.value.substr(1);
+          }
           var scrollTarget = document.getElementById(scrollTargetId);
           
           if ( scrollTarget ) {
@@ -114,9 +122,6 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function makeContactFormToggleable() {
-    var modalContainer = document.getElementById("contact-modal-container");
-    var toggle = document.getElementById("contact-modal-toggle");
-    var closeToggles = document.querySelectorAll("[data-js-modal-close]");
     var showClass = "is-active";
     var contactSection = document.getElementById("contact");
     var toggleContact = function(event) {
@@ -127,16 +132,6 @@ document.addEventListener("DOMContentLoaded", function() {
         modalContainer.classList.add(showClass); 
       }
     }
-
-    toggle.addEventListener("click", function(event) {
-      toggleContact(event);
-    });
-
-    closeToggles.forEach(function(el) {
-      el.addEventListener("click", function(event) {
-        toggleContact(event);
-      });
-    });
   }
 
   function initContactForm() {
