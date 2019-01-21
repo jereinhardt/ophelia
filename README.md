@@ -54,8 +54,6 @@ $secondary-color: red;
 @import "ophelia";
 ```
 
-Even if you don't want to customize your styles, you MUST use `@import "ophelia"` in order to use the theme's default styles.
-
 The Sass variables you can override are:
 
 - `$primary-color` - the primary color of your site's color scheme.

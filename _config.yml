@@ -78,11 +78,6 @@ social:
 footer:
   owner: Ophelia of Denmark
 
-styles:
-  colors:
-    background: "#fff"
-    primary: "#000"
-
 collections:
   projects:
     output: true
