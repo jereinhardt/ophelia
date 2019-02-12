@@ -5,7 +5,7 @@
       {% if site.main_navigation.logo %}  
         <img
           class="navbar-logo"
-          src="{{ site.main_navigation.logo }}"
+          src="{{ site.main_navigation.logo | absolute_url }}"
         />
       {% else %}
         <span class="navbar-logo-text">
