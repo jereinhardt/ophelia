@@ -1,7 +1,7 @@
 <nav class="navbar" role="navigation" aria-label="main navigation" id="main-navigation">
   <input type="checkbox" class="navbar-checkbox hidden" id="mobile-nav-checkbox" />
   <div class="navbar-brand">    
-    <a href="/" class="navbar-item">
+    <a href={{ "/" | relative_url }} class="navbar-item">
       {% if site.main_navigation.logo %}  
         <img
           class="navbar-logo"
@@ -23,11 +23,8 @@
     <div class="navbar-end">
       {% for item in site.main_navigation.items %}
         <a 
-          href="{{ item.path }}"
+          href="{{ item.path | relative_url }}"
           class="navbar-item"
-          {% if item.path | slice: 0 | == "#" %}
-            data-js-scroll-to-target="true"
-          {% endif %}
         >
           <span class="navbar-item--text">            
             {{ item.text }}
@@ -36,7 +33,12 @@
       {% endfor %}
       {% if site.main_navigation.cta_text %}
         <div class="navbar-item">
-          <a href="{{ site.main_navigation.cta_path }}" class="button navbar--primary-cta" data-js-scroll-to-target="true">
+          <a 
+            href="{{ site.main_navigation.cta_path }}"
+            class="button navbar--primary-cta" 
+            {% if site.main_navigation.cta_path | slice: 0 | == "#" %}
+              data-js-scroll-to-target="true">
+            {% endif %}
             {{ site.main_navigation.cta_text }}
           </a>          
         </div>

@@ -3,7 +3,7 @@
   <div class="container">
     {% if site.about.image %}
       <figure class="about--image-container">
-        <img src="{{ site.about.image }}" class="about--image">
+        <img src="{{ site.about.image | relative_url }}" class="about--image">
       </figure>
     {% endif %}
     <p class="about--description">

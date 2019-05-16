@@ -4,7 +4,7 @@
   </h1>
   <div class="portfolio--projects-container">
     {% for project in site.projects %}
-      <a href="{{ project.url }}" class="portfolio--project" {% if project.image %} style="background-image: url('{{ project.image }}')" {% endif %}>
+      <a href="{{ project.url | relative_url }}" class="portfolio--project" {% if project.image %} style="background-image: url('{{ project.image | relative_url }}')" {% endif %}>
         <div class="portfolio--project-content">
           <h3 class="portfolio--project-title title">
             {{ project.title }}
@@ -15,7 +15,7 @@
       </a>
     {% endfor %}
     {% for project in site.portfolio.items %}
-      <a href="{{ project.link }}" class="portfolio--project" {% if project.image %} style="background-image: url('{{ project.image }}')" {% endif %}>
+      <a href="{{ project.link | relative_url }}" class="portfolio--project" {% if project.image %} style="background-image: url('{{ project.image | relative_url }}')" {% endif %}>
         <div class="portfolio--project-content">
           <h3 class="portfolio--project-title title">
             {{ project.title }}

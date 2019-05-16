@@ -17,6 +17,24 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
+  function getSamepageNavbarLinks() {
+    var navbarLinks = document.querySelectorAll(".navbar-end a.navbar-item");  
+    var samePageLinks = [];
+    var regex = /^(\/.*)#(.*)/;
+
+    for ( var i = 0; i < navbarLinks.length; i++ ) {
+      var link = navbarLinks[i];
+      var matches = link.attributes.href.value.match(regex);
+      if ( matches && matches[1] == window.location.pathname ) {
+        samePageLinks.push({
+          element: link,
+          targetId: matches[2]
+        });
+      }
+    }
+    return samePageLinks;    
+  }
+
   function initializeNavbar() {
     var navbar = document.getElementById("main-navigation");
     var mobileNavCheckbox = document.getElementById("mobile-nav-checkbox");
@@ -32,20 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
 
-    var navbarLinks = document.querySelectorAll(".navbar-end a.navbar-item");  
-    var samePageLinks = [];
-    var regex = /^(\/.*)#(.*)/;
-
-    for ( var i = 0; i < navbarLinks.length; i++ ) {
-      var link = navbarLinks[i];
-      var matches = link.attributes.href.value.match(regex);
-      if ( matches && matches[1] == window.location.pathname ) {
-        samePageLinks.push({
-          element: link,
-          targetId: matches[2]
-        });
-      }
-    }
+    var samePageLinks = getSamepageNavbarLinks();
 
     if ( samePageLinks.length > 0 ) {
       window.addEventListener("scroll", function(event) {
@@ -94,30 +99,33 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function initScrollToggles() {
-    var toggles = document.querySelectorAll("[data-js-scroll-to-target]");
+    var toggles = [];
+    document.querySelectorAll("[data-js-scroll-to-target]").forEach(function(el) {
+      toggles.push(el);
+    });
+    var samePageNavbarLinks = getSamepageNavbarLinks();
+    for ( var i = 0; i < samePageNavbarLinks.length; i++ ) {
+      toggles.push(samePageNavbarLinks[i].element)
+    }
+
     toggles.forEach(function(el) {
 
       var regex = /^(\/.*)#(.*)/;
       var matches = el.attributes.href.value.match(regex);
-      if ( 
-        ( matches && window.location.pathname == matches[1] ) ||
-        el.attributes.href.value.substr(0, 1) == "#"
-      ) {
-        el.addEventListener("click", function(event) {
-          var scrollTargetId;
-          if ( matches ) {
-            scrollTargetId = matches[2];
-          } else {
-            scrollTargetId = el.attributes.href.value.substr(1);
-          }
-          var scrollTarget = document.getElementById(scrollTargetId);
-          
-          if ( scrollTarget ) {
-            event.preventDefault();
-            scrollTo(scrollTarget);
-          }
-        });
-      }
+      el.addEventListener("click", function(event) {
+        var scrollTargetId;
+        if ( matches ) {
+          scrollTargetId = matches[2];
+        } else {
+          scrollTargetId = el.attributes.href.value.substr(1);
+        }
+        var scrollTarget = document.getElementById(scrollTargetId);
+        
+        if ( scrollTarget ) {
+          event.preventDefault();
+          scrollTo(scrollTarget);
+        }
+      });
     });
   }
 

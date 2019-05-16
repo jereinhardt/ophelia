@@ -20,7 +20,15 @@
       {% endif %}
       {% if site.hero.cta_text && site.hero.cta_path %}
         <div class="hero--cta-container hero-component">
-          <a href="{{ site.hero.cta_path }}" class="hero--cta button" data-js-scroll-to-target>
+          <a 
+            class="hero--cta button"
+            {% if site.hero.cta_path | slice: 0 | == "#" %}
+              data-js-scroll-to-target
+              href="{{ site.hero.cta_path }}"
+            {% else %}
+              href="{{ site.hero.cta_path | relative_url }}"
+            {% endif %}
+          >
             {{ site.hero.cta_text }}
           </a>
         </div>

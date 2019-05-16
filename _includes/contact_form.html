@@ -1,5 +1,5 @@
 <h1 class="title contact--title">{{ site.contact.title }}</h1>
-<form id="contact-form" class="contact--form" method="POST">
+<form id="contact-form" class="contact--form" method="POST" action="{{ site.contact.form.action }}">
   <input type="text" name="_gotcha" style="display:none" />
   {% if site.contact.form.thank_you_redirect %}
     <input type="hidden" name="_next" value="{{ site.contact.form.thank_you_redirect }}">
@@ -27,6 +27,8 @@
     <div class="contact--form-error-message hidden" data-js-warning="true">{{ site.contact.form.message.error }}</div>
   </div>
 
+  {{ site.contact.form.extra_input_html }}
+
   <div class="contact--form-row">
       <button type="submit" class="contact--submit">{{ site.contact.form.submit }}</button>
   </div>
@@ -43,7 +45,7 @@
     {% for media in site.social %}
       <li class="contact--social-link-item">
         <a href="{{ media.link }}" class="contact--social-link">
-          <img src="/assets/img/social/{{ media.name | downcase }}.svg" alt="{{ media.name }}" width="60" height="60">
+          <img src={{ "/assets/img/social/" | append: media.name | append: ".svg" | downcase | relative_url }} alt="{{ media.name }}" width="60" height="60">
         </a>
       </li>
     {% endfor %}

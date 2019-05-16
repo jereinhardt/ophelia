@@ -1,111 +1,114 @@
+---
+---
+
 @font-face {
     font-family: 'GT Walsheim';
-    src: url('/assets/fonts/GT-Walsheim-Pro-Trial-Ultra-Bold.otf');
+    src: url({{ '/assets/fonts/GT-Walsheim-Pro-Trial-Ultra-Bold.otf' | relative_url }});
     font-weight: 900;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'GT Walsheim';
-    src: url('/assets/fonts/GT-Walsheim-Pro-Trial-Ultra-Bold-Oblique.otf');
+    src: url({{ '/assets/fonts/GT-Walsheim-Pro-Trial-Ultra-Bold-Oblique.otf' | relative_url }});
     font-weight: 900;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'GT Walsheim';
-    src: url('/assets/fonts/GT-Walsheim-Pro-Trial-Black.otf');
+    src: url({{ '/assets/fonts/GT-Walsheim-Pro-Trial-Black.otf' | relative_url }});
     font-weight: 800;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'GT Walsheim';
-    src: url('/assets/fonts/GT-Walsheim-Pro-Trial-Black-Oblique.otf');
+    src: url({{ '/assets/fonts/GT-Walsheim-Pro-Trial-Black-Oblique.otf' | relative_url }});
     font-weight: 800;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'GT Walsheim';
-    src: url('/assets/fonts/GT-Walsheim-Pro-Trial-Bold.otf');
+    src: url({{ '/assets/fonts/GT-Walsheim-Pro-Trial-Bold.otf' | relative_url }});
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'GT Walsheim';
-    src: url('/assets/fonts/GT-Walsheim-Pro-Trial-Bold-Oblique.otf');
+    src: url({{ '/assets/fonts/GT-Walsheim-Pro-Trial-Bold-Oblique.otf' | relative_url }});
     font-weight: 700;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'GT Walsheim';
-    src: url('/assets/fonts/GT-Walsheim-Pro-Trial-Medium.otf');
+    src: url({{ '/assets/fonts/GT-Walsheim-Pro-Trial-Medium.otf' | relative_url }});
     font-weight: 600;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'GT Walsheim';
-    src: url('/assets/fonts/GT-Walsheim-Pro-Trial-Medium-Oblique.otf');
+    src: url({{ '/assets/fonts/GT-Walsheim-Pro-Trial-Medium-Oblique.otf' | relative_url }});
     font-weight: 600;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'GT Walsheim';
-    src: url('/assets/fonts/GT-Walsheim-Pro-Trial-Regular.otf');
+    src: url({{ '/assets/fonts/GT-Walsheim-Pro-Trial-Regular.otf' | relative_url }});
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'GT Walsheim';
-    src: url('/assets/fonts/GT-Walsheim-Pro-Trial-Regular-Oblique.otf');
+    src: url({{ '/assets/fonts/GT-Walsheim-Pro-Trial-Regular-Oblique.otf' | relative_url }});
     font-weight: 400;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'GT Walsheim';
-    src: url('/assets/fonts/GT-Walsheim-Pro-Trial-Light.otf');
+    src: url({{ '/assets/fonts/GT-Walsheim-Pro-Trial-Light.otf' | relative_url }});
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'GT Walsheim';
-    src: url('/assets/fonts/GT-Walsheim-Pro-Trial-Light-Oblique.otf');
+    src: url({{ '/assets/fonts/GT-Walsheim-Pro-Trial-Light-Oblique.otf' | relative_url }});
     font-weight: 300;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'GT Walsheim';
-    src: url('/assets/fonts/GT-Walsheim-Pro-Trial-Thin.otf');
+    src: url({{ '/assets/fonts/GT-Walsheim-Pro-Trial-Thin.otf' | relative_url }});
     font-weight: 200;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'GT Walsheim';
-    src: url('/assets/fonts/GT-Walsheim-Pro-Trial-Thin-Oblique.otf');
+    src: url({{ '/assets/fonts/GT-Walsheim-Pro-Trial-Thin-Oblique.otf' | relative_url }});
     font-weight: 200;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'GT Walsheim';
-    src: url('/assets/fonts/GT-Walsheim-Pro-Trial-Ultra-Light.otf');
+    src: url({{ '/assets/fonts/GT-Walsheim-Pro-Trial-Ultra-Light.otf' | relative_url }});
     font-weight: 100;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'GT Walsheim';
-    src: url('/assets/fonts/GT-Walsheim-Pro-Trial-Ultra-Light-Oblique.otf');
+    src: url({{ '/assets/fonts/GT-Walsheim-Pro-Trial-Ultra-Light-Oblique.otf' | relative_url }});
     font-weight: 100;
     font-style: italic;
 }

@@ -4,7 +4,7 @@
   {% if page.background %} 
     style="background: {{ page.background }}"
   {% elsif page.image %}
-    style="background-image: url('{{ page.image  }}')"
+    style="background-image: url('{{ page.image | relative_url }}')"
   {% endif %}
   >
   <div class="container">

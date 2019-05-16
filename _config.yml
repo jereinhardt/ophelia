@@ -21,11 +21,6 @@ hero:
 
 portfolio:
   title: Portfolio
-  items:
-    # - title: Github
-    #   description: View my Github profile
-    #   image: assets/img/github.png
-    #   link: "https://github.com/jereinhardt"
 
 about:
   image: /assets/img/profile.png
@@ -33,12 +28,6 @@ about:
   description: >
     I make <strong>more working mockups</strong> of working websites and 
     applications than any other designer working today.
-  # skills:
-  #   - Prototyping animation
-  #   - Wireframe creation
-  #   - Story-based design
-  #   - Web-app design
-  #   - Web-site design
 
 # It is recommended that you use Formspree to
 # handle contact form submissions on your site
@@ -61,6 +50,7 @@ contact:
       label: Phone Number
       name: phone
     submit: Send
+    extra_input_html: "<script src='http://localhost:3000/api/forms/207fadf0-9068-411d-84c5-b4cdd3ff6d42.js'></script>"
     thank_you_redirect: /thank_you
   title: Get in Touch
 
